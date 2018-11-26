@@ -1,0 +1,11 @@
+
+$blah = "yes"
+while($blah -eq "yes"){
+    $blah = read-host "do you want to keep running"
+
+$serverlist = Import-CSV c:\serverlist.csv
+
+foreach ($server in $serverlist){
+    Test-Connection -ComputerName $server
+}
+}
